@@ -15,6 +15,8 @@ public class MyFrame extends JFrame implements ActionListener {
         comboBox = new JComboBox(animals);
         comboBox.addActionListener(this);
 
+        comboBox.setEditable(true);
+
 
         this.add(comboBox);
         this.pack();
@@ -25,7 +27,8 @@ public class MyFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==comboBox){
-            System.out.println(comboBox.getSelectedItem());
+//            System.out.println(comboBox.getSelectedItem());
+            System.out.println(comboBox.getSelectedIndex());
         }
 
     }
