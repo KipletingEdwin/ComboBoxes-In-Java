@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame implements ActionListener {
+    JComboBox comboBox;
 
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -11,7 +12,8 @@ public class MyFrame extends JFrame implements ActionListener {
 
         String[] animals = {"dog","cat","bird"};
 
-        JComboBox comboBox = new JComboBox(animals);
+        comboBox = new JComboBox(animals);
+        comboBox.addActionListener(this);
 
 
         this.add(comboBox);
@@ -22,6 +24,9 @@ public class MyFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==comboBox){
+            System.out.println(comboBox.getSelectedItem());
+        }
 
     }
 }
